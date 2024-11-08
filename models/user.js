@@ -32,7 +32,7 @@ const UserSchema = new Schema({
             dbpress: number, 
         }, 
         required: [ true, 'prStats are required in order to continue!' ]
-    }
+    }, 
 }); 
 
 const User =  Model('User', UserSchema); 
