@@ -7,9 +7,18 @@ const UserSchema = new Schema({
         type: String,
         required: [ true, "Username is required!"]
     }, 
+    email: { 
+        type: String, 
+        required: [ true, "Email is required" ] 
+    }, 
+    password: { 
+        type: String, 
+        required: [ true, "Password is required" ] 
+    }, 
     image: { 
         type: String, 
-        required: [ true, "Image is required!" ]
+        required: [ true, "Image is required!" ], 
+        default: '', 
     }, 
     crewIds: { 
         type: [ Schema.Types.ObjectId ]
@@ -31,7 +40,14 @@ const UserSchema = new Schema({
             bbrow: number, 
             dbpress: number, 
         }, 
-        required: [ true, 'prStats are required in order to continue!' ]
+        required: [ true, 'prStats are required in order to continue!' ], 
+        default: { 
+            bench: 0, 
+            squat: 0, 
+            deadlift: 0, 
+            bbrow: 0, 
+            dbpress: 0, 
+        }
     }, 
 }); 
 
